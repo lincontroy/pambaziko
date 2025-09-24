@@ -98,7 +98,8 @@ class CampaignController extends Controller
                 ]);
     
                 // Dispatch new job for this contact
-                ProcessSTKPushJob::dispatch($contact, $campaign->paybill, $campaign);
+                ProcessSTKPushJob::dispatch($contact, $campaign->paybill, $campaign)
+                ->delay(now()->addMinutes(2));
                 
                 $retryCount++;
                 $dispatchResults[] = [
