@@ -285,7 +285,7 @@ public function createdeposit($phone, $amount){
     $password=env('hero_pass');
 
     $chnan=env('chan');
-    $password="2pkJWfUtwqlJPPjXWm7bHZWu0JusqHZmpUv0AurB";
+   
 
     $payload = [
         "amount" => floatval($amount),
