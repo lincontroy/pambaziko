@@ -280,13 +280,17 @@ public function createdeposit($phone, $amount){
     
     
     
-    $username="Z1bxzc8svnSM9SwnL3RU";
+    $username=env('hero_username');
+
+    $password=env('hero_pass');
+
+    $chnan=env('chan');
     $password="2pkJWfUtwqlJPPjXWm7bHZWu0JusqHZmpUv0AurB";
 
     $payload = [
         "amount" => floatval($amount),
         "phone_number" => $phone,
-        "channel_id" => 3546,
+        "channel_id" => $chnan,
         "provider" => "m-pesa",
         "external_reference" => "INV-009",
         "callback_url" => "https://bealvexintl.com/api/response"
